@@ -1,3 +1,24 @@
+## [](https://github.com/pocket-id/pocket-id/compare/v1.9.0...v) (2025-08-24)
+
+
+### Bug Fixes
+
+* sqlite migration drops allowed user groups ([d6d1a4c](https://github.com/pocket-id/pocket-id/commit/d6d1a4ced23886f255a9c2048d19ad3599a17f26))
+
+## [](https://github.com/pocket-id/pocket-id/compare/v1.8.1...v) (2025-08-24)
+
+
+### Features
+
+* support automatic db migration rollbacks ([#874](https://github.com/pocket-id/pocket-id/issues/874)) ([c114a2e](https://github.com/pocket-id/pocket-id/commit/c114a2edaae4c007c75c34c02e8b0bb011845cae))
+
+
+### Bug Fixes
+
+* don't force uuid for client id in postgres ([2ffc6ba](https://github.com/pocket-id/pocket-id/commit/2ffc6ba42af4742a13b77543142b66b3e826ab88))
+* ensure SQLite has a writable temporary directory ([#876](https://github.com/pocket-id/pocket-id/issues/876)) ([1f3550c](https://github.com/pocket-id/pocket-id/commit/1f3550c9bd3aafd3bd2272ef47f3ed8736037d81))
+* sort order incorrect for apps when using postgres ([d0392d2](https://github.com/pocket-id/pocket-id/commit/d0392d25edcaa5f3c7da2aad70febf63b47763fa))
+
 ## [](https://github.com/pocket-id/pocket-id/compare/v1.8.0...v) (2025-08-24)
 
 
