@@ -1,5 +1,13 @@
 import { m } from '$lib/paraglide/messages';
 
+export const eventTypes: Record<string, string> = {
+	SIGN_IN: m.sign_in(),
+	TOKEN_SIGN_IN: m.token_sign_in(),
+	CLIENT_AUTHORIZATION: m.client_authorization(),
+	NEW_CLIENT_AUTHORIZATION: m.new_client_authorization(),
+	ACCOUNT_CREATED: m.account_created()
+}
+
 /**
  * Translates an audit log event type using paraglide messages.
  * Falls back to a formatted string if no specific translation is found.
@@ -7,15 +15,8 @@ import { m } from '$lib/paraglide/messages';
  * @returns The translated string.
  */
 export function translateAuditLogEvent(event: string): string {
-	// Convert the event string from the backend (e.g., "CLIENT_AUTHORIZATION")
-	// to the corresponding paraglide message key format (e.g., "client_authorization").
-	const messageKey = event.toLowerCase();
-
-	// Check if a function with that key exists on the `m` object.
-	// We cast `m` to `any` to allow for dynamic access with a string key.
-	if (messageKey in m && typeof (m as any)[messageKey] === 'function') {
-		// If it exists, call it to get the translated string.
-		return (m as any)[messageKey]();
+	if (event in eventTypes) {
+		return eventTypes[event];
 	}
 
 	// If no specific translation is found, provide a readable fallback.
